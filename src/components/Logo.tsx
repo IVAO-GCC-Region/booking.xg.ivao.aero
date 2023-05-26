@@ -8,7 +8,7 @@ interface LogoProps {
 
 export const Logo: FunctionComponent<LogoProps> = ({ sidebar = false }) => {
     const { themeVariant } = useContext(ThemeContext);
-    const imgUrl = window.location.protocol + "//" + window.location.host + "/logo.svg";
+    const imgUrl = Env[`LOGO${sidebar ? "_SIDEBAR_" : "_"}${themeVariant === ThemeVariants.DARK ? "DARK" : "LIGHT"}`];
 
     return (
         <img src={imgUrl} width="214px" height="56px" className={`w-54 h-14 ${sidebar ? "" : "-ml-5"}`} alt="Logo IVAO Brasil" />
