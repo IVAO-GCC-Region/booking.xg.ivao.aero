@@ -38,3 +38,4 @@ jobs:
         password: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
         local-dir: build/
         server-dir: /
+
